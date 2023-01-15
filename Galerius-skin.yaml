@@ -1,0 +1,21 @@
+---
+hunting_info:
+- :zone:
+  - thicket_vipers
+  :duration: 20
+  stop_on:
+  - Skinning
+  :boxes: false
+
+skinning:
+  skin: true
+  arrange_all: false
+  arrange_count: 4
+  
+weapon_training:
+  Heavy Thrown: throwing hammer
+
+training_abilities:
+  Hunt: 190 # Perception
+  Collect: 190 # Outdoorsmanship
+  Teach: 180

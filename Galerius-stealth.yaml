@@ -1,0 +1,42 @@
+hunting_info:
+- :zone:
+  - rats
+  stop_on:
+  - Stealth
+
+training_abilities:
+  Stealth: 60
+force_unhide: true
+
+
+# - skill: 
+#   - Stealth
+#   start: 10
+#   scripts:
+#   - get2 xxxxx
+#   - weararmor stealth
+#   - simplestealth
+#   - weararmor
+#   - gosafe 
+#   - locksmithing
+
+# binu
+#   loop do
+#   DRC.bput('hide', /Roundtime/)
+#   DRC.bput('unhide', /unhide matches go here, including one for if you already got pointed out by the mob/)
+#   break if DRSkill.getxp('Stealth') > 33
+# end
+
+
+# madigan
+# pause 1 while DRRoom.npcs.size==0
+
+# fput("advance #{DRRoom.npcs[0]}")
+# pause 11
+
+# while DRSkill.getxp('Stealth') < 33
+#   fput('hide')
+#   waitrt?
+#   fput('unhide')
+#   pause 0.5
+# end

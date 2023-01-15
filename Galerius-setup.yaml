@@ -1,0 +1,794 @@
+# lang 3406
+# saferoom: 6218
+# safe_room: 6218
+safe_room: &safe_rooms
+  Crossing: 6218
+  Riverhaven: 8720
+  Therenborough: 10079
+# prehunt_buffing_room: 850
+hometown: Riverhaven
+repair_town: Crossing
+repair_timer: 21600 # 8 hours
+repair_withdrawal_amount: 30000
+
+favor_goal: 55
+favor_god: Chadatru
+
+# Offer primers on favor altars instead of doing the puzzle, allows more immortal choices and is faster at higher favor counts
+use_favor_altars: false
+
+# how often to rub a stored favor orb in combat
+favor_orb_rub_frequency: 300
+
+paladin_use_badge: true
+
+pray_to_chadatru: true
+
+tithe: true
+
+braid_item: grass
+
+waggle_force_cambrinth: false
+buff_spells_force_cambrinth: false
+
+cambrinth: cambrinth armband
+cambrinth_cap: 32
+
+number_of_firstaid_charts: 13
+compendium_type: compendium
+exp_timers:
+  First Aid: 360
+
+# potential hang rooms
+# 6177 [Wilderness, Forest] by Knife Clan
+
+hunting_buddies:
+  - Ruecolle
+  - Raidst
+
+t2_avoids:
+  - type: join
+    state: false # heart - thank you
+  - type: hold
+    state: true
+  - type: drag
+    state: true
+
+training_abilities:
+  Smite: 60
+  App Quick: 30
+  Hunt: 120
+  Analyze: 120
+  Recall: 1800
+
+training_list:
+- skill: 
+  - Athletics
+  start: 15
+  scripts:
+  - athletics
+
+- skill:
+  - Crossbow
+  start: 15
+  scripts:
+  - get2 1167
+  - buff
+  - safe-room
+  - hunting-buddy main
+  - safe-room
+  - sell-loot
+  - crossing-repair force
+  - checkfavors
+
+# - skill:
+#   - Skinning
+#   start: 15
+#   scripts:
+#   - hunting-buddy skin
+#   - sell-loot
+
+- skill:
+  - Attunement
+  start: 15
+  scripts:
+  - performance checksong
+  - attunement
+
+- skill:
+  - Locksmithing
+  start: 10
+  scripts:
+  - hunting-buddy back
+  - get2 1007 # crossing
+  # - get2 479 # haven
+  # - get2 3339 # lang
+  - pick
+  - safe-room
+  - sell-loot
+
+- skill:
+  - Forging
+  start: 10
+  scripts:
+  - workorder blacksmithing
+  - sell-loot
+
+- skill:
+  - Engineering
+  start: 10
+  scripts:
+  - workorder shaping
+  - sell-loot
+
+- skill:
+  - Shield Usage
+  - Light Armor
+  - Chain Armor
+  - Brigandine
+  - Plate Armor
+  start: 7
+  scripts:
+  - get2 1167
+  - buff
+  - hunting-buddy shield
+  - safe-room
+
+- skill:
+  - Scholarship
+  start: 10
+  scripts:
+  - performance checksong
+  - attunement sigil
+
+- skill:
+  - Performance
+  start: 10
+  scripts:
+  - performance
+
+- skill:
+  - Shield Usage
+  - Light Armor
+  - Chain Armor
+  - Brigandine
+  - Plate Armor
+  start: 35
+  scripts:
+  - safe-room
+  - hunting-buddy shield
+  - safe-room
+
+  # - skill: 
+  # - First Aid
+  # start: 10
+  # scripts:
+  # # - get2 1007
+  # - get2 3339
+  # - first-aid
+
+
+use_weak_attacks: false
+use_stealth_attacks: false
+use_stealth_ranged: false
+
+health_threshold: 50
+
+restock:
+  bolt:
+    quantity: 15
+  arrow:
+    quanity: 15
+
+storage_containers:
+  - combat kit
+  - duffel bag
+  - warrior belt
+
+####################
+#Crafting Settings##
+####################
+
+
+ 
+# workorders_force_heal: false
+retain_crafting_materials: false
+# mark_crafted_goods: false
+craft_max_mindstate: 25
+workorder_diff: challenging
+workorder_cash_on_hand: 5000
+# workorders_repair: false
+
+crafting_container: combat kit
+
+train_workorders:
+- Blacksmithing
+- Shaping
+
+forging_tools:
+- ball-peen hammer
+- tong
+- leather bellows
+- curved shovel
+
+shaping_tools:
+- carving knife
+- wood shaper
+- metal drawknife
+- iron rasp
+- metal clamps
+
+picking_box_source: duffel bag
+# Keep this empty to drop too-hard boxes on the ground
+picking_box_storage: 
+# True to harvest traps while disarming.
+harvest_traps: false
+
+gear:
+# Armor
+- :adjective: target
+  :name: shield
+  :is_worn: true
+  :hinders_lockpicking: true
+  :container: combat kit
+
+- :adjective: great
+  :name: helm
+  :is_worn: true
+  :hinders_lockpicking: true
+  :container: combat kit
+
+- :adjective: chain
+  :name: lorica
+  :is_worn: true
+  :hinders_lockpicking: true
+  :container: combat kit
+
+- :adjective: lamellar
+  :name: vambraces
+  :is_worn: true
+  :hinders_lockpicking: true
+  :container: combat kit
+
+- :adjective: plate
+  :name: gauntlets
+  :is_worn: true
+  :hinders_lockpicking: true
+  :container: combat kit
+
+- :adjective: leather
+  :name: greaves
+  :is_worn: true
+  :hinders_lockpicking: true
+  :container: combat kit
+
+- :adjective: animite
+  :name: shackle
+  :hinders_lockpicking: true
+  :is_worn: true
+  :hinders_lockpicking: true
+  :container: combat kit
+
+# Weapons
+  # small edged
+- :adjective: steel
+  :name: tanto
+  :container: combat kit
+  :wield: true
+
+  # large edged
+  # twohanded edged
+- :adjective: bastard
+  :name: sword
+  :swappable: true
+  :container: warrior belt
+  :wield: true
+
+  # small blunt
+  # light thrown
+- :adjective: throwing
+  :name: club
+  :container: combat kit
+  :wield: true
+
+  # large blunt
+  # heavy thrown
+- :adjective: throwing
+  :name: hammer
+  :container: warrior belt
+  :wield: true
+
+  # twohanded blunt
+- :adjective: #
+  :name: flail
+  :container: warrior belt
+  :wield: true
+
+  # staves
+- :adjective: slender
+  :name: quarterstaff
+  :container: warrior belt
+  :wield: true
+
+  # polearms
+- :adjective: dragonwood
+  :name: standard
+  :container: warrior belt
+  :wield: true
+
+  # bow
+- :adjective: nisha
+  :name: bow
+  :container: combat kit
+
+  # crossbow
+- :adjective: battle
+  :name: stonebow
+  :container: combat kit
+
+  # sling
+- :adjective: shepherd
+  :name: sling
+  :container: combat kit
+
+  # tools
+# - :adjective: stirring 
+#   :name: rod
+#   :tie_to: odaj
+# - :adjective: clockwork
+#   :name: tongs 
+#   :tie_to: odaj
+# - :adjective: wide 
+#   :name: shovel
+#   :tie_to: odaj
+# - :adjective: set.of
+#   :name: bellows
+#   :tie_to: odaj
+# - :adjective: pair.of
+#   :name: pliers
+#   :tie_to: odaj
+# - :adjective: ball-peen 
+#   :name: hammer
+#   :tie_to: odaj
+
+# forging_belt:
+#   name: odaj
+#   items:
+#   - stirring rod
+#   - clockwork tongs
+#   - wide shovel
+#   - set.of bellows
+#   - pair.of pliers
+#   - ball-peen hammer
+
+# forging_tools:
+#   - stirring rod
+#   - clockwork tongs
+#   - wide shovel
+#   - set.of bellows
+#   - pair.of pliers
+#   - ball-peen hammer
+  
+gear_sets:
+  # Default set to be used in/out of combat
+  standard:
+  - animite shackle
+  - great helm
+  - chain lorica
+  - lamellar vambraces
+  - target shield
+  - plate gauntlets
+  - leather greaves
+  swimming:
+  - target shield
+
+# Real settings go in main, back, etc. This just gets rid of warnings.
+weapon_training:
+  Small Edged: steel tanto
+
+gem_pouch_adjective: blue
+spare_gem_pouch_container: combat kit
+tie_gem_pouches: false
+sell_loot_pouch: true
+sell_loot_bundle: true
+sell_loot_metals_and_stones: true
+sell_loot_metals_and_stones_container: duffel bag
+
+loot_subtractions:
+  # - card
+  - crossbow bolt
+  - crossbow bolts
+  - basilisk arrow
+  - basilisk arrows
+  - boar arrow
+  - boar arrows
+  - rock
+  - rocks
+  - cougar-claw arrows
+
+loot_additions:
+# Ammo
+- crossbow bolt
+- crossbow bolts
+- boar arrow
+- boar arrows
+# Metals
+- nugget
+- bar
+# Scrolls
+- scroll
+- leaf
+- tablet
+- vellum
+- roll
+- parchment
+- bark
+- papyrus
+- ostracon
+- map
+- runestone
+
+# The container that has the nuggets and bars (e.g. zinc nugget and bronze bar) to sell.
+sell_loot_metals_and_stones_container: combat kit
+# The following is the default in base.yaml
+# You only need to have this in your character's yaml
+# if you want to fully customize which metals and stones
+# that you do NOT want to sell.
+# Full list of metals and stones are in scripts/data/base-items.yaml
+sell_loot_ignored_metals_and_stones:
+# Rare Metals
+- agonite
+- aldamdin
+- animite
+- audrualm
+- coralite
+- damite
+- darkstone
+#- electrum
+- glaes
+- haledroth
+- haralun
+- icesteel
+- indurium
+- kadepa
+- kelpzyte
+- kertig
+- kiralan
+- loimic
+- lumium
+- muracite
+- niello
+- niniam
+- orichalcum
+- platinum
+- quelium
+- silversteel
+- telothian
+- tomiek
+- tyrium
+- vardite
+- yellow gold
+# Rare Stones
+- anjisis
+- belzune
+- blackwater jet
+- diamondique
+- felstone
+- fulginode
+- senci
+- xenomite
+
+prep_scaling_factor: 0.82
+check_discern_timer_in_hours: 12
+# magic_training: *cst
+
+cast_only_to_train: true
+# magic_exp_training_max_threshold: 32
+# training_spell_mana_threshold: 40
+#combat_spell_training_max_threshold: 34
+use_harness_when_arcana_locked: true
+# dedicated_camb_use: spell
+# waggle_force_cambrinth: true
+buff_spells_force_cambrinth: true
+train_with_spells: true
+# use_research: false
+# cambrinth_num_charges: 2
+# stored_cambrinth: false
+# cambrinth_cap: 108
+
+
+aa: &aa # 71
+  Aspirant's Aegis:
+    use_auto_mana: true
+    
+hes: &hes
+  Heroic Strength:
+    use_auto_mana: true
+
+sr: &sr
+  Sentinel's Resolve:
+    use_auto_mana: true
+
+da: &da
+  Divine Armor:
+    use_auto_mana: true
+
+# as: &as
+#   Anti-Stun:
+#     # recast: 1
+#     use_auto_mana: true
+
+courage: &courage # 49
+  Courage:
+    use_auto_mana: true
+    
+# tk: &tk
+#   Tamsine's Kiss:
+#     use_auto_mana: true
+    
+# clarity: &clarity
+#   Clarity:
+#     use_auto_mana: true
+
+# tr: &tr
+#   Truffenyi's Rally:
+#     cyclic: true
+#     recast: 0
+#     mana: 25
+
+# tw: &tw
+#   Tailwind:
+#     use_auto_mana: true
+
+
+####################################
+# MAGIC SETTINGS: RUNESTONES
+####################################
+
+# bless: &bless
+#   Bless:
+#     mana: 0
+#     prep_type: invoke
+#     symbiosis: false
+#     runestone_name: elbaite runestone
+#     cambrinth:
+#     - 50
+
+# cv: &cv
+#   Clear Vision:
+#     mana: 0
+#     prep_type: invoke
+#     symbiosis: false
+#     runestone_name: avaes runestone
+#     cambrinth:
+#     - 30
+    
+# pfe: &pfe
+#   Protection from Evil:
+#     mana: 0
+#     prep_type: invoke
+#     symbiosis: false
+#     recast: 5
+#     runestone_name: topaz runestone
+#     cambrinth:
+#     - 50
+    
+# refresh: &refresh
+#   Refresh:
+#     mana: 0
+#     prep_type: invoke
+#     symbiosis: false
+#     runestone_name: quartz runestone
+#     cambrinth:
+#     - 10
+
+# runestone_storage: pack
+
+# runestone_harness: 20
+
+
+####################################
+# MAGIC SETTINGS: BUFFS
+####################################
+
+buffs: &buffs
+  << : *hes   # strength | 66
+  << : *sr    # def + shield | 46
+  # << : *rw    # weapon ranks
+  << : *da    # armor prot * absorb | 34
+#  << : *how   # Warding and Utility
+  << : *aa    # phys dmg redux | 65
+  # << : *mo    # + DISC | 36
+  # << : *tk    # damage spreader
+  # << : *tr    # balance heal
+#  << : *tw    # buff ranged
+  # << : *as # anti stun
+  # << : *courage # spirit | 45
+
+buff_spells: &buff_spells
+  << : *buffs
+
+waggle_sets:
+  default:
+    << : *buffs
+  prebuff:
+    << : *buffs
+
+
+# don't cast ;buff waggles without this much mana or concentration
+waggle_spells_mana_threshold: 20
+
+# concentration can be 0 to remove the conc check but it cannot be blank.  Must be an integer.
+waggle_spells_concentration_threshold: 40
+
+# waggle_sets:
+#   prehunt_buffs:
+#     Heroic Strength:
+#       mana: 20
+#     Sentinel's Resolve:
+#       mana: 15
+#     Aspirant's Aegis:
+#       mana: 18
+    # Divine Armor:
+    #   mana: 15
+
+
+####################################
+# MAGIC SETTINGS: WARDING / UTILITY / SORCERY
+####################################
+  
+combat_spell_training: &cst
+  Utility:
+    abbrev: hoj
+    # symbiosis: true
+    mana: 13
+    cambrinth:
+     - 13
+     - 13
+ 
+  Augmentation:
+    abbrev: marshal order
+    # symbiosis: true
+    mana: 15
+    cambrinth:
+    - 15
+    - 4
+   
+  Warding:
+    abbrev: courage
+    # symbiosis: true
+    mana: 10
+    cambrinth:
+    - 15
+    - 15
+ 
+ # Sorcery:
+ #    abbrev: shadows
+ #    symbiosis: true
+ #    mana: 10
+
+magic_training: *cst
+
+
+# threshold in mind-states to train combat_spell_training spells up to.
+magic_exp_training_max_threshold: 30
+
+
+offensive_spells:
+- skill: Targeted Magic
+  name: Dinazen Olkar
+  # abbrev: fst
+  cast_only_to_train: true
+  mana: 18
+  
+- skill: Debilitation
+  name: Stun Foe
+  # abbrev: sf
+  # prep: invoke
+  mana: 20
+  # cambrinth:
+  # - 30
+  # - 30
+  # - 30
+  # min_threshold: 1
+  cast_only_to_train: true
+  
+  
+#- skill: Sorcery
+#  name: Ice Patch
+#  mana: 
+#  cambrinth:
+#  - 15
+#  - 15
+#  - 15
+#  cast_only_to_train: false 
+
+
+sanowret_adjective: sanowret
+
+# Don't try to use crystal while these scripts are active.
+sanowret_no_use_scripts: 
+- forge
+- sew
+- go2
+- buff
+- faskinner
+- athletics
+- simplestealth
+ 
+# Don't try to use crystal while in these rooms.
+sanowret_no_use_rooms: 
+- Carousel Chamber
+- Carousel Booth
+- Knife Clan, Triage
+- Clerics' Guild, Esuin's Study
+  
+skinning:
+  skin: true
+  arrange_all: false
+  arrange_count: 0
+  tie_bundle: true
+
+# Listen to classes in your safe-room
+listen: true
+
+# listen_observe: true
+
+listen_skills:
+- Alchemy
+- Appraisal
+- Arcana
+- Athletics
+- Attunement
+- Augmentation
+- Bows
+- Brawling
+- Brigandine
+- Chain Armor
+- Crossbow
+- Debilitation
+- Defending
+- Enchanting
+- Engineering
+- Evasion
+- First Aid
+- Forging
+- Heavy Thrown
+- Large Blunt
+- Large Edged
+- Life Magic
+- Light Armor
+- Light Thrown
+- Locksmithing
+- Melee Mastery
+- Missile Mastery
+- Offhand Weapon
+- Outdoorsmanship
+- Outfitting
+- Parry Ability
+- Perception
+- Performance
+- Plate Armor
+- Polearms
+- Scholarship
+- Shield Usage
+- Skinning
+- Slings
+- Small Blunt
+- Small Edged
+- Staves
+- Stealth
+- Tactics
+- Targeted Magic
+- Twohanded Blunt
+- Twohanded Edged
+- Utility
+- Warding
+
+
+# If true, will attempt to pull money from the nearest bank if you have no money for fares
+bescort_fare_handling: true
+
+# Hide when on the ferries, etc.
+bescort_hide: true
+

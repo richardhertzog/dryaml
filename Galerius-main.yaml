@@ -1,0 +1,65 @@
+box_loot_limit: 0
+
+hunting_info:
+  - :zone:
+    # - thugs
+    # - dryads
+    # - rock_guardians
+    # - giant_bears
+    # - grphons0
+    # - gryphons1
+    - onyx_gargoyles
+    - dusky_basilisk
+    # - shadow_beasts
+    :duration: 30
+    stop_on:
+      - Crossbow
+    :boxes: false
+
+skinning:
+  skin: true
+  arrange_all: false
+  arrange_count: 0
+  tie_bundle: true
+  dissect: false
+
+weapon_training:
+  Large Edged: bastard sword
+  Twohanded Blunt: flail
+  Polearms: dragonwood standard
+  Heavy Thrown: throwing hammer
+  Crossbow: battle stonebow
+  Brawling: ''
+dance_skill: Large Edged
+
+combat_trainer_target_increment: 5
+combat_trainer_action_count: 20
+combat_teaching_skill: Tactics
+
+attack_overrides:
+  Heavy Thrown: throw
+  # Large Edged: draw
+  # Twohanded Blunt: draw
+  # Polearms: draw
+  # Brawling: elbow
+
+gear_set:
+  standard:
+  - animite shackle
+  - great helm
+  - chain lorica
+  - lamellar vambraces
+  - target shield
+  - plate gauntlets
+  - leather greaves
+
+aiming_trainables:
+  - Brawling
+
+training_abilities:
+  Smite: 61 # Conviction
+  Hunt: 190 # Perception
+  Collect: 190 # Outdoorsmanship
+  App Quick: 120 # Appraisal - training each time
+  Analyze: 190 # Tactics
+  Teach: 180

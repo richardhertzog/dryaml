@@ -1,0 +1,69 @@
+---
+hunting_info:
+- :zone:
+  # - badgers
+  # - cougars
+  # - goblin_shaman_crossing
+  # - scouts
+  # - reavers
+  # - wood_trolls_vineyard
+  # - rock_trolls
+  # - buccas
+  # - rock_trolls_rockslide
+  # - fire_sprites
+  - thugs
+  # - small_peccary_and_swamp_trolls
+  # - clay_soldier
+  :duration: 15
+  stop_on:
+  # - Slings
+  # - Small Edged
+  # - Twohanded Edged
+  # - Offhand Weapon
+  # - Light Thrown
+  # - Small Blunt
+  # - Large Blunt
+  # - Staves
+  # - Bow
+  :boxes: true
+  args:
+  - boxes
+
+# # only loot up to this many boxes
+# box_loot_limit: 15 
+
+# # if boxes: true is set in a hunt, then the hunt will only hunt until it gets this box minimum
+box_hunt_minimum: 10
+
+# # Where to put the looted boxes for the pick script to find
+picking_box_source: duffel bag
+
+skinning:
+  skin: false
+  dissect: true
+  dissect_priority: # First Aid | Skinning | Or leave blank to cycle
+  
+weapon_training:
+  Small Edged: steel tanto
+  Twohanded Edged: bastard sword
+  Offhand Weapon: throwing club
+  Light Thrown: throwing club
+  Small Blunt: throwing club
+  Large Blunt: throwing hammer
+  Staves: slender quarterstaff
+  Slings: shepherd sling
+  Bow: nisha bow
+
+combat_trainer_target_increment: 5
+combat_trainer_action_count: 20
+
+aiming_trainables:
+  - Small Blunt
+  - Small Edged
+
+training_abilities:
+  Hunt: 190 # Perception
+  Collect: 190 # Outdoorsmanship
+  Teach: 180
+  
+combat_teaching_skill: Tactics

@@ -1,0 +1,109 @@
+# hometown: Crossing
+safe_room: &safe_room 1007
+
+gear:
+# armor
+- :name: helm
+  :adjective: ring
+  :hinders_lockpicking: true
+  :is_worn: true
+  :container: backpack
+
+- :name: mask
+  :adjective: plate
+  :hinders_lockpicking: true
+  :is_worn: true
+  :container: backpack
+
+- :name: leathers
+  :adjective: black
+  :hinders_lockpicking: true
+  :is_worn: true
+  :container: backpack
+
+- :name: targe
+  :hinders_lockpicking: true
+  :is_worn: true
+  :container: backpack
+
+- :name: gloves
+  :adjective: scale
+  :hinders_lockpicking: true
+  :is_worn: true
+  :container: backpack
+
+# weapons
+- :name: bow
+  :adjective: skirmisher
+  :hinders_lockpicking: false
+  :is_worn: true
+  :container: backpack
+
+- :name: stick
+  :adjective: parry
+  :hinders_lockpicking: false
+  :is_worn: true
+  :container: backpack
+
+- :name: handwraps
+  :adjective: moth
+  :hinders_lockpicking: false
+  :is_worn: true
+  :container: backpack
+
+# bow
+- :adjective: nisha
+  :name: shortbow
+  :container: backpack
+
+# large edged
+- :adjective:
+  :name: broadsword
+  :container: backpack
+
+# small blunt/light thrown
+- :adjective: throwing
+  :name: club
+  :container: backpack
+
+# small blunt/light thrown
+- :adjective: throwing
+  :name: club
+  :container: backpack
+
+# heavy thrown/large blunt
+- :adjective: throwing
+  :name: hammer
+  :container: backpack
+
+gear_sets:
+  standard:
+  - ring helm
+  - plate mask
+  - black leathers
+  - targe
+  - scale gloves
+  - skirmisher bow
+  - parry stick
+  - moth handwraps
+  stealing:
+  - skirmisher bow
+  - parry stick
+  - moth handwraps
+  swimming:
+  - skirmisher bow
+  - parry stick
+  - moth handwraps
+
+offensive_spells:
+- skill: Targeted Magic
+  name: Stampede
+  abbrev: stampede
+  mana: 20
+  cast_only_to_train: true
+- skill: Debilitation
+  name: Swarm
+  abbrev: swarm
+  mana: 15
+  harmless: true
+  cast: cast creatures
